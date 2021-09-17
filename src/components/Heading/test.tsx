@@ -1,19 +1,13 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
-import Heading from './index'
+import Heading from '.'
 
 describe('<Heading />', () => {
-  it('match snapshot', () => {
-    const { container } = render(<Heading />)
-
-    expect(container).toMatchSnapshot()
-  })
-
-  it('should render the heading', () => {
-    render(<Heading />)
-
-    expect(
-      screen.getByRole('heading', { name: /Heading/i })
-    ).toBeInTheDocument()
+  it('should render white logo by default', () => {
+    renderWithTheme(<Heading>Heading</Heading>)
+    expect(screen.getByText(/Heading/i)).toHaveStyle({
+      color: '#FAFAFA'
+    })
   })
 })
