@@ -30,6 +30,11 @@
     "next-pwa": "^5.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "@styled-icons/boxicons-regular": "^10.34.0",
+    "@styled-icons/boxicons-solid": "^10.34.0",
+    "@styled-icons/fa-brands": "^10.34.0",
+    "@styled-icons/material-outlined": "^10.34.0",
+    "@styled-icons/remix-fill": "^10.18.0",
     "styled-components": "5.2.1",
     "styled-media-query": "^2.1.2"
   },
