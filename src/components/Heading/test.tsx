@@ -11,6 +11,67 @@ describe('<Heading />', () => {
     })
   })
 
+  it('should render heading with small size', () => {
+    renderWithTheme(<Heading size="small">Won</Heading>)
+    expect(screen.getByRole('heading', { name: /Won/i })).toHaveStyle({
+      'font-size': '1.6rem'
+    })
+
+    expect(screen.getByRole('heading', { name: /Won/i })).toHaveStyleRule(
+      //expect
+      'width',
+      '3rem',
+      //when
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
+  it('should render heading with a primary line color', () => {
+    renderWithTheme(
+      <Heading lineColor="primary" lineLeft lineBottom>
+        Won Games
+      </Heading>
+    )
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
+      'border-left': '0.7rem solid #F231A5'
+    })
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
+      //expect
+      'border-bottom',
+      '0.5rem solid #F231A5',
+      //when
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
+  it('should render heading with a secundary line color', () => {
+    renderWithTheme(
+      <Heading lineColor="secondary" lineLeft lineBottom>
+        Won Games
+      </Heading>
+    )
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
+      'border-left': '0.7rem solid #3CD3C1'
+    })
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyleRule(
+      //expect
+      'border-bottom',
+      '0.5rem solid #3CD3C1',
+      //when
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
   it('should render a black heading when color is passed', () => {
     renderWithTheme(<Heading color="black">Won Games</Heading>)
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
@@ -21,7 +82,7 @@ describe('<Heading />', () => {
   it('should render a heading with a line to the left side', () => {
     renderWithTheme(<Heading lineLeft>Won Games</Heading>)
     expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
-      'border-left': '0.7rem solid #3CD3C1'
+      'border-left': '0.7rem solid #F231A5'
     })
   })
 
