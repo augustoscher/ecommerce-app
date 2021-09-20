@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // Types provided from the official repo:
 // https://github.com/styled-components/jest-styled-components/blob/master/typings/index.d.ts
 
@@ -20,7 +21,6 @@ declare global {
       supports?: string
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface Matchers<R, T> {
       toHaveStyleRule(property: string, value?: Value, options?: Options): R
     }
