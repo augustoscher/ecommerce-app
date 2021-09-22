@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Ribbon /> should render the text correctly 1`] = `
+.c0 {
+  font-size: 1.4rem;
+  height: 3.6rem;
+  background-color: #F231A5;
+}
+
+<div
+  class="c0"
+  color="primary"
+>
+  Best Seller
+</div>
+`;
