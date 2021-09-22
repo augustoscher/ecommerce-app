@@ -20,6 +20,8 @@ describe('<Banner />', () => {
     // verifique se o subtitle existe renderizado
     // expect(screen.getByText(/Defy death/i)).toBeInTheDocument()
     // verifique se a imagem existe renderizado
+    expect(screen.getByRole('img', { name: /Defy death/i })).toBeInTheDocument()
+
     expect(screen.getByRole('link', { name: /buy now/i })).toBeInTheDocument()
   })
 })
