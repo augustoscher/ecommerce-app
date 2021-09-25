@@ -12,9 +12,10 @@ export const Wrapper = styled.main`
 
   ${media.lessThan('large')`
     ${RibbonStyles.Wrapper} {
+      //remove parte vazada do lado direito do Ribbon
       right: 0;
       &::before {
-        display: none;
+        display: none; //before é o triangulo
       }
     }
   `}
