@@ -1,5 +1,5 @@
 module.exports = {
-  modulePaths: ['<rootDir>/src'],
+  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
