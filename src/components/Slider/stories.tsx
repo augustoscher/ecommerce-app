@@ -42,7 +42,7 @@ const verticalSettings: Settings = {
   verticalSwiping: true,
   dots: true,
   infinite: false,
-  slidesToShow: 1
+  slidesToShow: 2
 }
 
 export const Vertical: Story = () => (
