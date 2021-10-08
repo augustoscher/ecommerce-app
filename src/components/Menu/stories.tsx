@@ -11,7 +11,7 @@ export const MobileDefault: Story<MenuProps> = (args) => <Menu {...args} />
 MobileDefault.parameters = {
   layout: 'fullscreen',
   backgrounds: {
-    default: 'dark'
+    default: 'won-dark'
   },
   viewport: {
     defaultViewport: 'mobile1'
@@ -23,6 +23,6 @@ export const DesktopDefault: Story<MenuProps> = (args) => <Menu {...args} />
 DesktopDefault.parameters = {
   layout: 'fullscreen',
   backgrounds: {
-    default: 'dark'
+    default: 'won-dark'
   }
 }
