@@ -4,12 +4,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 
 import GameCard from '.'
 
-const props = {
-  title: 'Population Zero',
-  developer: 'Rockstar Games',
-  img: 'https://source.unsplash.com/user/willianjusten/300x140',
-  price: 'R$ 235,00'
-}
+import props from './mock'
 
 describe('<GameCard />', () => {
   it('should render correctly', () => {
@@ -29,10 +24,6 @@ describe('<GameCard />', () => {
     )
 
     expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
-  })
-
-  it('should render price in label', () => {
-    renderWithTheme(<GameCard {...props} />)
 
     // preço não tenha line-through
     const price = screen.getByText(props.price)

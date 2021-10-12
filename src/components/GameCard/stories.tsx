@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import GameCard, { GameCardProps } from '.'
+import data from './mock'
 
 export default {
   title: 'GameCard',
@@ -10,11 +11,7 @@ export default {
     }
   },
   args: {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/willianjusten/300x140',
-    price: 'R$ 235,00',
-    promotionalPrice: 'R$ 215,00'
+    ...data
   },
   argTypes: {
     onFav: { action: 'clicked' },
