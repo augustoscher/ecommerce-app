@@ -54,6 +54,7 @@ export const SectionNews = styled(Sections)`
       padding-top: 14rem;
       padding-bottom: 10rem;
       background-color: ${theme.colors.lightBg};
+      /* cli-path to make effects with diagonal lines */
       clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
 
       ${HeadingStyles.Wrapper} {
