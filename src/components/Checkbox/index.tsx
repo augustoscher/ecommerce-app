@@ -6,7 +6,7 @@ export type CheckboxProps = {
   label?: string
   labelFor?: string
   labelColor?: 'white' | 'black'
-}
+} & InputHTMLAttributes<HTMLInputElement> //let pass by props other properties of input
 
 const Checkbox = ({
   onCheck,
