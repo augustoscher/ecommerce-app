@@ -4,6 +4,9 @@ import Checkbox, { CheckboxProps } from '.'
 export default {
   title: 'Checkbox',
   component: Checkbox,
+  argTypes: {
+    onCheck: { action: 'checked' }
+  },
   parameters: {
     backgrounds: {
       default: 'won-dark'
