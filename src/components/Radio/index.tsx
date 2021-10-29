@@ -1,8 +1,14 @@
+import { InputHTMLAttributes } from 'react'
 import * as S from './styles'
 
-const Radio = () => (
+export type RadioProps = {
+  name?: string
+  value?: string
+} & InputHTMLAttributes<HTMLInputElement> //let pass by props other properties of input
+
+const Radio = ({ name, value = '', ...props }: RadioProps) => (
   <S.Wrapper>
-    <h1>Radio</h1>
+    <S.Input type="radio" name={name} value={value} {...props} />
   </S.Wrapper>
 )
 
