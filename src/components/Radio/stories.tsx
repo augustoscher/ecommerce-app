@@ -3,7 +3,7 @@ import Radio from '.'
 
 export default {
   title: 'Radio',
-  component: Radio,
+  component: Radio
 } as Meta
 
 export const Usage: Story = () => <Radio />
