@@ -12,8 +12,6 @@ describe('<Radio />', () => {
   it('should render the heading', () => {
     render(<Radio />)
 
-    expect(
-      screen.getByRole('heading', { name: /Radio/i })
-    ).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /Radio/i })).toBeInTheDocument()
   })
 })
