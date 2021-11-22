@@ -1,5 +1,8 @@
 import styled, { css } from 'styled-components'
 
+import * as HeadingStyles from 'components/Heading/styles'
+import * as LogoStyles from 'components/Logo/styles'
+
 export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,12 +10,13 @@ export const Wrapper = styled.main`
 `
 
 export const BannerBlock = styled.div`
-  padding: 40px;
   ${({ theme }) => css`
     position: relative;
     background-image: url('/img/auth-bg.jpeg');
     background-size: cover;
     background-position: center center;
+    padding: ${theme.spacings.xxlarge} ${theme.spacings.xxlarge}
+      ${theme.spacings.large};
 
     &:after {
       content: '';
@@ -30,18 +34,51 @@ export const BannerBlock = styled.div`
 export const BannerContent = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.white};
+    display: grid;
+    grid-template-columns: 1fr; //use entire
+    justify-content: space-between;
+    height: 100%;
     position: relative;
     z-index: ${theme.layers.base};
   `}
 `
 
-export const Subtitle = styled.h3``
+export const Subtitle = styled.h3`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xxlarge};
+    font-weight: ${theme.font.light};
+    margin-top: ${theme.spacings.xxsmall};
+    strong {
+      color: ${theme.colors.primary};
+    }
+  `}
+`
 
-export const Footer = styled.footer``
+export const Footer = styled.p`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    text-align: center;
+    align-self: end;
+  `}
+`
 
 export const Content = styled.div`
-  padding: 40px;
   ${({ theme }) => css`
-    background-color: ${theme.colors.white};
+    background: ${theme.colors.white};
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  `}
+`
+
+export const ContentWrapper = styled.div`
+  ${({ theme }) => css`
+    width: 30rem;
+    ${LogoStyles.Wrapper} {
+      margin: 0 auto ${theme.spacings.xxlarge};
+    }
+    ${HeadingStyles.Wrapper} {
+      margin-bottom: ${theme.spacings.medium};
+    }
   `}
 `
