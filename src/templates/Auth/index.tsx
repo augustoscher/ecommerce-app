@@ -1,4 +1,3 @@
-import FormSignIn from 'components/FormSignIn'
 import Heading from 'components/Heading'
 import Logo from 'components/Logo'
 import * as S from './styles'
@@ -32,8 +31,7 @@ const Auth = ({ title, children }: AuthProps) => (
         <Heading color="black" lineColor="secondary" lineLeft>
           {title}
         </Heading>
-
-        <FormSignIn />
+        {children}
       </S.ContentWrapper>
     </S.Content>
   </S.Wrapper>
