@@ -6,8 +6,10 @@ import * as HeadingStyles from 'components/Heading/styles'
 import * as GameCardSliderStyles from 'components/GameCardSlider/styles'
 import * as HighlightStyles from 'components/Highlight/styles'
 
+// Set container to work as a section. Originally container is a div.
 export const Wrapper = styled(Container).attrs({ as: 'section' })`
   ${({ theme }) => css`
+    // add this styles on Container component
     ${HeadingStyles.Wrapper},
     ${HighlightStyles.Wrapper},
     ${GameCardSliderStyles.Wrapper} {
