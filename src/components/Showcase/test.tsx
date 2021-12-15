@@ -1,19 +1,15 @@
 import { render, screen } from '@testing-library/react'
 
-import Showcase from './index'
+import Showcase from '.'
 
 describe('<Showcase />', () => {
-  it('match snapshot', () => {
-    const { container } = render(<Showcase />)
-
-    expect(container).toMatchSnapshot()
-  })
-
   it('should render the heading', () => {
-    render(<Showcase />)
+    const { container } = render(<Showcase />)
 
     expect(
       screen.getByRole('heading', { name: /Showcase/i })
     ).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
