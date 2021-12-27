@@ -10,10 +10,14 @@ describe('<GameInfo />', () => {
     const { container } = renderWithTheme(<GameInfo {...data} />)
 
     expect(
-      screen.getByRole('heading', { name: /my game title/i })
+      screen.getByRole('heading', { name: /borderlands 3/i })
     ).toBeInTheDocument()
-    expect(screen.getByText(/\$210,00/)).toBeInTheDocument()
-    expect(screen.getByText(/game description/i)).toBeInTheDocument()
+    expect(screen.getByText(/\$215,00/)).toBeInTheDocument()
+    expect(
+      screen.getByText(
+        /Experience the epic space strategy games that redefined the RTS genre. Control your fleet and build an armada across more than 30 single-player missions./i
+      )
+    ).toBeInTheDocument()
 
     expect(container.firstChild).toMatchSnapshot()
   })
