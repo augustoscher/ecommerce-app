@@ -1,19 +1,15 @@
 import { render, screen } from '@testing-library/react'
 
-import WishList from './index'
+import Wishlist from '.'
 
-describe('<WishList />', () => {
-  it('match snapshot', () => {
-    const { container } = render(<WishList />)
-
-    expect(container).toMatchSnapshot()
-  })
-
+describe('<Wishlist />', () => {
   it('should render the heading', () => {
-    render(<WishList />)
+    const { container } = render(<Wishlist />)
 
     expect(
-      screen.getByRole('heading', { name: /WishList/i })
+      screen.getByRole('heading', { name: /Wishlist/i })
     ).toBeInTheDocument()
+
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
