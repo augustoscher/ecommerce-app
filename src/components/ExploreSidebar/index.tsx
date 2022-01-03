@@ -22,6 +22,7 @@ type Field = {
 }
 
 type Values = {
+  // string definition: variavel de nome dinamico que vai ter um tipo boolean ou string
   [field: string]: boolean | string
 }
 
@@ -40,6 +41,7 @@ const ExploreSidebar = ({
   const [isOpen, setIsOpen] = useState(false)
 
   const handleChange = (name: string, value: string | boolean) => {
+    // faz destructuring de todos os valores que já existem, mais o que foi passado
     setValues((s) => ({ ...s, [name]: value }))
   }
 
