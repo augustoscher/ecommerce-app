@@ -20,6 +20,7 @@ export const Content = styled.div`
     margin-top: ${theme.spacings.small};
     position: absolute;
     right: 0;
+
     &::before {
       content: '';
       position: absolute;
@@ -53,6 +54,7 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ theme, isOpen }) => css`
     position: relative;
     width: max-content;
+
     ${Content} {
       transition: transform 0.2s ease-in, opacity ${theme.transition.default};
       ${isOpen && wrapperModifiers.open()}
