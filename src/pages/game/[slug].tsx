@@ -28,7 +28,7 @@ export default function Index(props: GameTemplateProps) {
 }
 
 // gerar em build time (/game/bla, /bame/foo ...)
-// utilizado para gerar todas as páginas
+// utilizado para gerar todas as páginas (gera as urls)
 export async function getStaticPaths() {
   const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
     query: QUERY_GAMES,
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 // static gera em build time
-// utilizado para gerar uma pagina especifica
+// utilizado para gerar uma pagina especifica (obtem os dados da pagina especifica)
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data } = await apolloClient.query<
     QueryGameBySlug,
