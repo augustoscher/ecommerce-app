@@ -15,7 +15,7 @@ export type WishlistTemplateProps = {
   recommendedHighlight: HighlightProps
 }
 
-const WishList = ({
+const Wishlist = ({
   games = [],
   recommendedGames,
   recommendedHighlight
@@ -51,4 +51,4 @@ const WishList = ({
   </Base>
 )
 
-export default WishList
+export default Wishlist
