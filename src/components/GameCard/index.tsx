@@ -11,6 +11,7 @@ import Ribbon, { RibbonSizes, RibbonColors } from 'components/Ribbon'
 import formatPrice from 'utils/format-price'
 
 export type GameCardProps = {
+  id: string
   slug: string
   title: string
   developer: string
@@ -25,6 +26,7 @@ export type GameCardProps = {
 }
 
 const GameCard = ({
+  id,
   slug,
   title,
   developer,
