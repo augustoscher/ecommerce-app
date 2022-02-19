@@ -12,6 +12,7 @@ import {
   QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
 import { GetStaticProps } from 'next'
+import { getImageUrl } from 'utils/getImageUrl'
 
 const apolloClient = initializeApollo()
 
@@ -61,14 +62,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       revalidate: 60,
-      cover: `http://localhost:1337${game.cover?.src}`,
+      cover: getImageUrl(game.cover?.src),
       gameInfo: {
         title: game.name,
         price: game.price,
         description: game.short_description
       },
       gallery: game.gallery.map((image) => ({
-        src: `http://localhost:1337${image.src}`,
+        src: getImageUrl(image.src),
         label: image.label
       })),
       description: game.description,
