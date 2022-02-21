@@ -12,9 +12,8 @@ const data: HomeTemplateProps = {
   newGames: gamesMock,
   mostPopularHighlight: highlightMock,
   mostPopularGames: gamesMock,
-  upcommingGames: gamesMock,
-  upcommingHighligth: highlightMock,
-  upcommingMoreGames: gamesMock,
+  upcomingGames: gamesMock,
+  upcomingHighlight: highlightMock,
   freeGames: gamesMock,
   freeHighligth: highlightMock
 }
@@ -42,6 +41,6 @@ describe('<Home />', () => {
     renderWithTheme(<Home {...data} />)
 
     expect(screen.getByTestId('Mock Banner Slider')).toBeInTheDocument()
-    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(5)
+    expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(4)
   })
 })
