@@ -2,7 +2,6 @@
 
 This is a [Next.js](https://nextjs.org/) app that uses [ecommerce graphql-api](https://github.com/augustoscher/ecommerce-api).
 
-Created with [Next.js boilerplate](https://github.com/augustoscher/react-avancado-boilerplate).
 ## What is inside?
 
 This project uses lot of stuff as:
@@ -22,8 +21,6 @@ This project uses lot of stuff as:
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
