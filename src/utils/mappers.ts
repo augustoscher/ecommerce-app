@@ -6,6 +6,7 @@ import {
   QueryHome_freeGames,
   QueryHome_sections_popularGames_highlight
 } from 'graphql/generated/QueryHome'
+import { QueryRecommended_recommended_section_games } from 'graphql/generated/QueryRecommended'
 import { getImageUrl } from 'utils/getImageUrl'
 
 export const bannerMapper = (banners: QueryHome_banners[]) =>
@@ -28,6 +29,7 @@ export const gamesMapper = (
     | QueryHome_upcomingGames[]
     | QueryHome_freeGames[]
     | QueryHome_newGames[]
+    | QueryRecommended_recommended_section_games[]
     | null
     | undefined
 ) =>
