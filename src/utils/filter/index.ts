@@ -24,6 +24,9 @@ export const parseQueryStringToWhere = ({
         : { name_contains: queryString[key] }
     })
 
+  console.log('==========')
+  console.log(obj)
+  console.log('==========')
   return obj
 }
 
