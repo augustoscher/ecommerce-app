@@ -6,8 +6,7 @@ type ParseArgs = {
   filterItems: Pick<ItemProps, 'type' | 'name'>[]
 }
 
-// Filters
-// We need to transform query params in a valid strapi where JSON object
+// Filters - We need to transform query params in a valid strapi where JSON object
 export const parseQueryStringToWhere = ({
   queryString,
   filterItems
