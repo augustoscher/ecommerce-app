@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Close } from '@styled-icons/material-outlined/Close'
 import { FilterList } from '@styled-icons/material-outlined/FilterList'
+import { ParsedUrlQueryInput } from 'querystring'
+import xor from 'lodash.xor'
 
 import Heading from 'components/Heading'
 import Button from 'components/Button'
@@ -21,10 +23,7 @@ type Field = {
   name: string
 }
 
-type Values = {
-  // string definition: variavel de nome dinamico que vai ter um tipo boolean ou string
-  [field: string]: boolean | string
-}
+type Values = ParsedUrlQueryInput
 
 export type ExploreSidebarProps = {
   items: ItemProps[]
@@ -40,9 +39,15 @@ const ExploreSidebar = ({
   const [values, setValues] = useState(initialValues)
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleChange = (name: string, value: string | boolean) => {
+  const handleChangeRadio = (name: string, value: string | boolean) => {
     // faz destructuring de todos os valores que já existem, mais o que foi passado
     setValues((s) => ({ ...s, [name]: value }))
+  }
+
+  const handleChangeCheckbox = (name: string, value: string) => {
+    const currentList = (values[name] as []) || []
+    // adiciona so os valores diferentes
+    setValues((s) => ({ ...s, [name]: xor(currentList, [value]) }))
   }
 
   const handleFilter = () => {
@@ -72,8 +77,10 @@ const ExploreSidebar = ({
                   name={field.name}
                   label={field.label}
                   labelFor={field.name}
-                  isChecked={!!values[field.name]}
-                  onCheck={(v) => handleChange(field.name, v)}
+                  isChecked={(values[item.name] as string[])?.includes(
+                    field.name
+                  )}
+                  onCheck={() => handleChangeCheckbox(item.name, field.name)}
                 />
               ))}
 
@@ -86,8 +93,10 @@ const ExploreSidebar = ({
                   name={item.name}
                   label={field.label}
                   labelFor={field.name}
-                  defaultChecked={field.name === values[item.name]}
-                  onChange={() => handleChange(item.name, field.name)}
+                  defaultChecked={
+                    String(field.name) === String(values[item.name])
+                  }
+                  onChange={() => handleChangeRadio(item.name, field.name)}
                 />
               ))}
           </S.Items>
